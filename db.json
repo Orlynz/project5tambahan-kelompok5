@@ -1,0 +1,36 @@
+{
+  "Project5": [
+    {
+      "id": 1,
+      "motor": "MIO M3 125",
+      "cc": "125 cc",
+      "tahun": "2014",
+      "harga": "16750000",
+      "gambar": "https://www.yamaha-motor.co.id/uploads/products/2021091308185335707H37335.png"
+    },
+    {
+      "motor": "MIO Z",
+      "cc": "125 cc",
+      "tahun": "2014",
+      "harga": "15800000",
+      "gambar": "https://www.yamaha-motor.co.id/uploads/products/HqVh2xkCTQ2NsYoo3O0M.png",
+      "id": 2
+    },
+    {
+      "motor": "FINO GRANDE",
+      "cc": "125 cc",
+      "tahun": "2014",
+      "harga": "20300000",
+      "gambar": "https://www.yamaha-motor.co.id/uploads/products/2021012509135130104C35216.png",
+      "id": 3
+    },
+    {
+      "motor": "FINO PREMIUM",
+      "cc": "125 cc",
+      "tahun": "2014",
+      "harga": "19140000",
+      "gambar": "https://www.yamaha-motor.co.id/uploads/products/2020121016095389291X50562.png",
+      "id": 4
+    }
+  ]
+}
