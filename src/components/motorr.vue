@@ -1,145 +1,196 @@
 <template>
-  <div id="a">
-    <div class="b">
-      <form @submit.prevent="add" action="login.php" method="POST">
-        <div class="d">
-          <h4>
-            Tambahkan Motor Baru
-            <hr size="2px" color="black" />
-          </h4>
-          <p>
-            <label><b>Nama Motor:</b></label
-            ><br />
-            <input
-              style="width: 300px"
-              placeholder="Masukkan Motor..."
-              type="text"
-              v-model="form.motor"
-              required
-            />
-          </p>
-          <p>
-            <label><b>CC:</b></label
-            ><br />
-            <input
-              style="width: 300px"
-              placeholder="CC..."
-              type="text"
-              v-model="form.cc"
-              required
-            />
-          </p>
-          <p>
-            <label><b>Tahun Produksi:</b> </label><br />
-            <input
-              style="width: 300px"
-              placeholder="Tahun Produksi..."
-              type="text"
-              v-model="form.tahun"
-              required
-            />
-          </p>
-          <p>
-            <label><b>Harga:</b></label
-            ><br />
-            <input
-              style="width: 300px"
-              placeholder="Masukkan Harga..."
-              type="text"
-              v-model="form.harga"
-              required
-            />
-          </p>
-          <p>
-            <label><b>Gambar:</b></label
-            ><br />
-            <input
-              style="width: 300px"
-              placeholder="Masukkan Gambar..."
-              type="text"
-              v-model="form.gambar"
-              required
-            />
-          </p>  
-          <button
-            class="btn btn-info"
-            type="submit"
-            id="f"
-            v-show="!updateSubmit"
-          >
-            Add Pinjaman
-          </button>
-          <button
-            class="btn btn-info"
-            type="submit"
-            id="f"
-            v-show="updateSubmit"
-            @click="update(form)"
-          >
-            Update
-          </button>
-        </div>
-        <p><i>*Syarat & Ketentuan Berlaku</i></p>
-      </form>
+  <div>
+    <div class="navbar">
+      <h3 class="admin">Dashboard Admin</h3>
+    </div>
+    <div class="sidebar">
+      <div class="nav"></div>
+      <a href="/motorr"
+        ><button class="btn">
+          <i style="margin-: right5px" class="fas fa-motorcycle"></i
+          ><br />Info</button
+        ><br
+      /></a>
+      <a href="/calculate"
+        ><button class="btn">
+          <i style="margin-right: 5px" class="fas fa-shopping-cart"></i
+          ><br />Beli</button
+        ><br
+      /></a>
+      <a href="/peduli"
+        ><button class="btnn">
+          <i style="margin-right: 5px" class="fas fa-hand-holding-heart"></i
+          ><br />Care</button
+        ><br
+      /></a>
+      <a href="/login"
+        ><button class="btnn">
+          <i style="margin-right: 5px" class="fas fa-sign-out-alt"></i
+          ><br />Logout</button
+        ><br
+      /></a>
+    </div>
 
-      <div class="c">
-        <h4 id="ab">Daftar Motor Siap Jual</h4>
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Nama Motor</th>
-              <th scope="col">CC</th>
-              <th scope="col">Tahun Produksi</th>
-              <th scope="col">Harga</th>
-              <th>Gambar</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody class="table-info">
-            <tr v-for="user in Project5" :key="user.id">
-              <td>
-                <b>{{ user.id }}</b>
-              </td>
-              <td>{{ user.motor }}</td>
-              <td>{{ user.cc }}</td>
-              <td>
-                {{ user.tahun }}
-              </td>
-              <td>
-                {{ user.harga }}
-              </td>
-              <td>
-                <img :src="user.gambar" width="80px" height="80px">
-              </td>
-              <td>
-                <b>
-                  <u>
-                    <button
-                      style="
-                        width: 115px;
-                        text-align: center;
-                        margin-bottom: 5px;
-                      "
-                      class="btn btn-success"
-                      @click="edit(user)"
-                    >
-                      Edit
-                    </button>
-                    <br />
-                    <button
-                      style="width: 115px; text-align: center"
-                      class="btn btn-danger"
-                      @click="del(user)"
-                    >
-                      Sold Out
-                    </button>
-                  </u>
-                </b>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div id="a">
+      <div class="b">
+        <form @submit.prevent="add" action="login.php" method="POST">
+          <div class="d">
+            <h2 style="text-align: center">
+              Tambahkan Motor Baru
+              <hr size="2px" color="black" />
+            </h2>
+            <br />
+            <p>
+              <label><b>Nama Motor:</b></label
+              ><br />
+              <input
+                style="width: 300px; padding: 5px"
+                placeholder="Masukkan Motor..."
+                type="text"
+                v-model="form.motor"
+                required
+              />
+            </p>
+            <br />
+            <p>
+              <label><b>CC:</b></label
+              ><br />
+              <input
+                style="width: 300px; padding: 5px"
+                placeholder="CC..."
+                type="text"
+                v-model="form.cc"
+                required
+              />
+            </p>
+            <br />
+            <p>
+              <label><b>Tahun Produksi:</b> </label><br />
+              <input
+                style="width: 300px; padding: 5px"
+                placeholder="Tahun Produksi..."
+                type="text"
+                v-model="form.tahun"
+                required
+              />
+            </p>
+            <br />
+            <p>
+              <label><b>Harga:</b></label
+              ><br />
+              <input
+                style="width: 300px; padding: 5px"
+                placeholder="Masukkan Harga..."
+                type="text"
+                v-model="form.harga"
+                required
+              />
+            </p>
+            <br />
+            <p>
+              <label><b>Gambar:</b></label
+              ><br />
+              <input
+                style="width: 300px; padding: 5px"
+                placeholder="Masukkan Gambar..."
+                type="text"
+                v-model="form.gambar"
+                required
+              />
+            </p>
+            <br />
+            <button
+              style="background-color: blue; border-radius: 5px"
+              class="btn btn-info"
+              type="submit"
+              id="f"
+              v-show="!updateSubmit"
+            >
+              Tambahkan Motor
+            </button>
+            <button
+              style="background-color: green; border-radius: 5px"
+              class="btn btn-info"
+              type="submit"
+              id="f"
+              v-show="updateSubmit"
+              @click="update(form)"
+            >
+              Update
+            </button>
+          </div>
+          <p><i>*Syarat & Ketentuan Berlaku</i></p>
+        </form>
+
+        <div class="c">
+          <h2 id="ab">Daftar Motor Siap Jual</h2>
+          <br />
+          <table id="as" class="table">
+            <thead>
+              <tr>
+                <th class="th">No</th>
+                <th class="th">Nama Motor</th>
+                <th class="th">CC</th>
+                <th class="th">Tahun Produksi</th>
+                <th class="th">Harga</th>
+                <th class="th">Gambar</th>
+                <th class="th">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="user in Project5" :key="user.id">
+                <td class="td">
+                  <b>{{ user.id }}</b>
+                </td>
+                <td class="td">{{ user.motor }}</td>
+                <td class="td">{{ user.cc }}</td>
+                <td class="td">
+                  {{ user.tahun }}
+                </td>
+                <td class="td">
+                  {{ user.harga }}
+                </td>
+                <td class="td">
+                  <img :src="user.gambar" width="80px" height="80px" />
+                </td>
+                <td class="td">
+                  <b>
+                    <u>
+                      <button
+                        style="
+                          margin-top: 3px;
+                          width: 115px;
+                          background-color: green;
+                          text-align: center;
+                          margin-bottom: 5px;
+                          border-radius: 5px;
+                        "
+                        class="btn btn-success"
+                        @click="edit(user)"
+                      >
+                        Edit
+                      </button>
+                      <br />
+                      <button
+                        style="
+                          width: 115px;
+                          text-align: center;
+                          margin-bottom: 3px;
+                          background-color: red;
+                          border-radius: 5px;
+                        "
+                        class="btn btn-danger"
+                        @click="del(user)"
+                      >
+                        Sold Out
+                      </button>
+                    </u>
+                  </b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -157,7 +208,7 @@ export default {
         cc: "",
         tahun: "",
         harga: "",
-        gambar: ""
+        gambar: "",
       },
       Project5: "",
       updateSubmit: false,
@@ -203,7 +254,7 @@ export default {
           cc: this.form.cc,
           tahun: this.form.tahun,
           harga: this.form.harga,
-          gambar: this.form.gambar
+          gambar: this.form.gambar,
         })
         .then((res) => {
           this.load();
@@ -230,9 +281,7 @@ export default {
 };
 </script>
 <style>
-
 #a {
-  border-radius: 25px;
   background-color: skyblue;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -261,5 +310,8 @@ export default {
 #ab {
   text-align: left;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#as {
+  width: 829px;
 }
 </style>

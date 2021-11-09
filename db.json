@@ -32,5 +32,38 @@
       "gambar": "https://www.yamaha-motor.co.id/uploads/products/2020121016095389291X50562.png",
       "id": 4
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "kelompok5",
+      "password": "123"
+    }
+  ],
+  "Kegiatan": [
+    {
+      "namakegiatan": "Yamaha peduli masyarakat, memberikan tabung oksigen, donasi dan sembako hingga program vaksinasi gratis untuk masyarakat",
+      "tempat": "Jawa Barat",
+      "tanggal": "2021-11-24",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "namakegiatan": "PT Yamaha KW Pekanbaru menyelenggarakan servis gratis",
+      "tempat": "Riau",
+      "tanggal": "2020-08-05"
+    },
+    {
+      "id": 3,
+      "namakegiatan": "Peduli Sulteng, Yamaha donasikan Rp 2 miliar dan 40 generator",
+      "tempat": "Sulawesi Tengah",
+      "tanggal": "2021-05-18"
+    },
+    {
+      "id": 4,
+      "namakegiatan": "Peduli Dampak Covid-19, Yamaha berbagi sembako kepada wartawan",
+      "tempat": "Jawa Tengah",
+      "tanggal": "2021-03-10"
+    }
   ]
 }
